@@ -16,6 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/electives.css" rel="stylesheet">
 
 	<!-- load up the scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -23,88 +24,6 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<style>
-
-	.text{
-	  font-size:10px;
-	  text-transform:capitalize;
-	}
-
-	/*this style gives the formatting for the div containing the map*/
-	#frontpagemap {
-	/*border is black line around the map*/
-	  border:2px solid #000;
-	/*border-radius is the curves at the corners of the map*/  
-	  border-radius: 5px;
-	  height:100%;
-	  overflow:hidden;
-	/*background defines the curves of the div on which the map is drawn*/    
-	  background: #F0F8FF;
-	}
-
-	.hidden { 
-	  display: none; 
-	}
-
-	/*graticule is the boxes in the background*/
-	.graticule {
-	  fill: none;
-	  stroke: #bbb;
-	  stroke-width: .5px;
-	  stroke-opacity: .5;
-	}
-
-	/*the Equator*/
-	.equator {
-	  stroke: #ccc;
-	  stroke-width: 1px;
-	}
-
-	path {
-	  stroke: white;
-	  stroke-width: 0.25px;
-	  fill: grey;
-	}
-	
-	img {
-		 max-width:100%;
-		 height: auto;
-	}
-
-.d3-tip {
-  line-height: 1;
-  padding: 12px;
-  background: rgba(33, 113, 181, 0.8);
-  color: #fff;
-  border-radius: 2px;
-  text-align: center;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
-
-	
-</style>
-
-
 
   </head>
 
