@@ -7,15 +7,11 @@ paul.renderGraph=function(strategy)
     var tooltipMethod=strategy.tooltip;
     var nameMethod=strategy.name;
     var place = strategy.place;
-//    var widthstatus = strategy.witdthstatus;
-//    var fixedwidth = strategy.fixedwidth;
     
     // Script for drawing the low point histogram again. 
-    var margin = {top: 10, right: 0, bottom: 150, left: 120},
+    var margin = {top: 30, right: 0, bottom: 150, left: 80},
         width = $(".graph")[0].offsetWidth - margin.left - margin.right;
     
-//    if (widthstatus === "fixed"){ width = fixedwidth }
-//    else{
     if (width > 500){ 
             height = 500 - margin.top - margin.bottom;
             }
@@ -25,7 +21,6 @@ paul.renderGraph=function(strategy)
         else {
             height = width - margin.top - margin.bottom;
             };
-//    }
     
     var x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
@@ -40,7 +35,7 @@ paul.renderGraph=function(strategy)
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(10);
+        .ticks(20);
     
     var div = d3.select(place).append("div")   
         .attr("class", "tooltip")               
@@ -59,12 +54,12 @@ paul.renderGraph=function(strategy)
     
     d3.csv("https://dl.dropboxusercontent.com/u/7729166/dataquotes20140814.csv", type, function(error, data) {
       x.domain(data.map(nameMethod));
-      y.domain([0, d3.max(data, function(d) { return valueMethod(d)+2;})]);
+      y.domain([0, d3.max(data, function(d) { return valueMethod(d);})]);
     
       svg.append("text")
           .attr("class", "title")
-          .attr("x", function(d) {return width/3;})
-          .attr("y", 10)
+          .attr("x", function(d) {return width/8;})
+          .attr("y", -10)
           .text(title);
     
       if (width > 500){   
