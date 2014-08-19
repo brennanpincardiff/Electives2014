@@ -40,11 +40,6 @@
       stroke-width: 0.25px;
       fill: grey;
     }
-    
-    img {
-         max-width:100%;
-         height: auto;
-    }
 
     .d3-tip {
         line-height: 1;
@@ -73,5 +68,40 @@
         margin: -1px 0 0 0;
         top: 100%;
         left: 0;
+    }
+    
+    .bar {
+      fill: steelblue;
+    }
+
+    .bar:hover {
+      fill: brown;
+    }
+    
+    .title {
+      font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .axis {
+      font: 10px sans-serif;
+    }
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .x.axis path {
+      display: none;
+    }
+
+    .hidden { 
+      display: none; 
+    }
+
+    path {
+      stroke: white;
+      stroke-width: 0.25px;
+      fill: grey;
     }
     
