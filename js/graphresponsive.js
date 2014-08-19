@@ -6,7 +6,7 @@ paul.renderGraph=function(strategy)
     var valueMethod=strategy.number;
     var tooltipMethod=strategy.tooltip;
     var nameMethod=strategy.name;
-
+    var place = strategy.place;
     
     // Script for drawing the low point histogram again. 
     var margin = {top: 10, right: 0, bottom: 150, left: 120},
@@ -37,11 +37,11 @@ paul.renderGraph=function(strategy)
         .orient("left")
         .ticks(10);
     
-    var div = d3.select("body").append("div")   
+    var div = d3.select(place).append("div")   
         .attr("class", "tooltip")               
         .style("opacity", 0);
     
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select(place).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
