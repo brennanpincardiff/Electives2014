@@ -18,7 +18,7 @@ var tip = d3.tip()
  					 		return "One sudent visited <br/>" + d.region;}
 						    else {
 					    	return "Students visited <br/>" + d.number + " locations in <br/>"  + d.region;}
-  				})
+  				});
 
 setup(width,height);
 
@@ -79,13 +79,13 @@ function draw(topo) {
                return projection([d.longitude, d.latitude])[1];
        })
        .attr("r",  function(d){
-       			return ([d.radius]*width/75)})
+       			return ([d.radius]*width/75);})
        .attr("stroke-width", 1)
        .attr("stroke", "black")
        .style("fill", function(d) {
-       					return ([d.color])})      
+       					return ([d.color]);})      
        .on('mouseover', tip.show)
-       .on('mouseout', tip.hide)
+       .on('mouseout', tip.hide);
 
     });
     };

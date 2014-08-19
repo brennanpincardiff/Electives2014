@@ -14,8 +14,8 @@ var tip = d3.tip()
 	.attr('class', 'd3-tip')
  	.offset([-10, 0])
 	.html(function(d) {
-			return d.speciality + "<br/> in <br/>"  + d.host + "<br/> <b>Experience </b>" + d.rateexperience
-  				})
+			return d.speciality + "<br/> in <br/>"  + d.host + "<br/> <b>Experience </b>" + d.rateexperience;
+  });
 
 setup(width,height);
 
@@ -79,12 +79,12 @@ d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electives7.tsv", function(er
        .attr("stroke-width", 0.5)
        .attr("stroke", "black")
        .style("fill", function(d) {
-       					if (d.rateexperience == "Excellent") {return "deeppink"}
-       					else if (d.rateexperience == "Very good") {return "hotpink"}
-       					else {return "pink"}
+       					if (d.rateexperience == "Excellent") {return "deeppink";}
+       					else if (d.rateexperience == "Very good") {return "hotpink";}
+       					else {return "pink";}
        					;})
 	   .on('mouseover', tip.show)
-       .on('mouseout', tip.hide)
+       .on('mouseout', tip.hide);
 
     });
     };
