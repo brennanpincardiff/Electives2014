@@ -23,6 +23,7 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script src="js/graphresponsive.js" ></script>
 	
 	<style>
 
@@ -136,11 +137,20 @@
 	</div>
 	
 	<div class="container">
-		<div id="safegraph">
-        	<!-- javascript for drawing the advice histogram -->
-			<script src=js/safegraphresponsive.js>
-					</script>
-		</div>
+		<div id="safegraph" class="graph">
+            <script type="application/javascript">
+                 paul.renderGraph(
+                    {
+                        title:"Did you feel safe on your Elective?",
+                        number:function(d){return d.safe_numbers;},
+                        tooltip:function(d){return d.safe_tip_quote;},
+                        name:function(d){return d.safe_disc;},
+                        place:"#safegraph",
+                        widthstatus: "fixed",
+                        fixedwidth: 400  
+                    });
+                </script>		
+          </div>
 	</div>
         
     <div class="container">
