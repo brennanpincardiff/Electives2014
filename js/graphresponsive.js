@@ -52,7 +52,7 @@ paul.renderGraph=function(strategy)
         .offset([-10, 0])
         .html(function(d) {return tooltipMethod(d);});
     
-    d3.csv("https://dl.dropboxusercontent.com/u/7729166/dataquotes20140814.csv", type, function(error, data) {
+    d3.csv("https://dl.dropboxusercontent.com/u/7729166/dataquotes20140819.csv", type, function(error, data) {
       x.domain(data.map(nameMethod));
       y.domain([0, d3.max(data, function(d) { return valueMethod(d);})]);
     
@@ -137,8 +137,8 @@ paul.renderGraph=function(strategy)
     
     
     
-    function type(d) {
+   function type(d) {
       d.low_numbers = +d.low_numbers;
-      return d;
+            return d;
     }
 };
