@@ -31,7 +31,7 @@ function setup(width,height){
 			      .attr("width", width)
 			      .attr("height", height)
 			      .call(zoom)
-			      .on("click", click)
+//			      .on("click", click)
 			      .append("g");
 				  g = svg.append("g:g");
 				}
@@ -137,7 +137,7 @@ function throttle() {
 
 //geo translation on mouse click in map
 
-function click() {
-  var latlon = projection.invert(d3.mouse(this));
-  console.log(latlon);
-}
+//function click() {
+//  var latlon = projection.invert(d3.mouse(this));
+//  console.log(latlon);
+//}
