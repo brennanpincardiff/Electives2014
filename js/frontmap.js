@@ -31,12 +31,11 @@ function setup(width,height){
 			      .attr("width", width)
 			      .attr("height", height)
 			      .call(zoom)
-//			      .on("click", click)
 			      .append("g");
 				  g = svg.append("g:g");
 				}
 
-d3.json("https://dl.dropboxusercontent.com/u/7729166/data/world-topo-min.json", function(error, world) {
+d3.json("data/world-topo-min.json", function(error, world) {
 				  var countries = topojson.feature(world, world.objects.countries).features;
 				  topo = countries;
 				  draw(topo);
@@ -67,7 +66,7 @@ function draw(topo) {
 
   //Adding elective summary circles from external TSV file
 
-  d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electivestotals.tsv", function(err, data) {
+  d3.tsv("data/electivestotals.tsv", function(err, data) {
     g.selectAll("circle")
        .data(data)
        .enter()
@@ -133,11 +132,4 @@ function throttle() {
     throttleTimer = window.setTimeout(function() {
       redraw();
     }, 200);
-}
-
-//geo translation on mouse click in map
-
-//function click() {
-//  var latlon = projection.invert(d3.mouse(this));
-//  console.log(latlon);
-//}
+};
