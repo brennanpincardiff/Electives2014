@@ -66,7 +66,7 @@ function draw(topo) {
 
   //Adding elective summary circles from external TSV file
 
-  d3.tsv("data/electivestotals.tsv", function(err, data) {
+  d3.tsv("./data/electivestotals.tsv", function(err, data) {
     g.selectAll("circle")
        .data(data)
        .enter()
