@@ -6,7 +6,7 @@ randomquote = function(strategy)
 // Free for all; but please leave in this header.
 // ==============================================
 
-var Quotation=new Array() // do not change this!
+var Quotation=new Array(); // do not change this!
 
 // Set up the quotations to be shown, below.
 // To add more quotations, continue with the
