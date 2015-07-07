@@ -14,8 +14,8 @@ var tip = d3.tip()
 	.attr('class', 'd3-tip')
  	.offset([-10, 0])
 	.html(function(d) {
-			return d.speciality + "<br/> in <br/>"  + d.host + "<br/> <b>Experience </b>" + d.rateexperience
-  				})
+			return d.speciality + "<br/> in <br/>"  + d.host + "<br/> <b>Experience </b>" + d.rateexperience;
+  });
 
 setup(width,height);
 
@@ -32,7 +32,7 @@ function setup(width,height){
 				  g = svg.append("g:g");
 				}
 
-d3.json("https://dl.dropboxusercontent.com/u/7729166/data/world-topo-min.json", function(error, world) {
+d3.json("./data/world-topo-min.json", function(error, world) {
 				  var countries = topojson.feature(world, world.objects.countries).features;
 				  topo = countries;
 				  draw(topo);
@@ -61,10 +61,8 @@ svg.append("path")
 
 				function drawsummarycircles(){
 
-  //Adding elective summary circles from external TSV file
-
 // load and display the places of the electives
-d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electives7.tsv", function(error, data) {
+d3.tsv("./data/electives7.tsv", function(error, data) {
     g.selectAll("circle")
        .data(data)
        .enter()
@@ -79,12 +77,12 @@ d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electives7.tsv", function(er
        .attr("stroke-width", 0.5)
        .attr("stroke", "black")
        .style("fill", function(d) {
-       					if (d.rateexperience == "Excellent") {return "deeppink"}
-       					else if (d.rateexperience == "Very good") {return "hotpink"}
-       					else {return "pink"}
+       					if (d.rateexperience == "Excellent") {return "deeppink";}
+       					else if (d.rateexperience == "Very good") {return "hotpink";}
+       					else {return "pink";}
        					;})
 	   .on('mouseover', tip.show)
-       .on('mouseout', tip.hide)
+       .on('mouseout', tip.hide);
 
     });
     };

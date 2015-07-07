@@ -40,11 +40,6 @@
       stroke-width: 0.25px;
       fill: grey;
     }
-    
-    img {
-         max-width:100%;
-         height: auto;
-    }
 
     .d3-tip {
         line-height: 1;
@@ -52,7 +47,9 @@
         background: rgba(33, 113, 181, 0.8);
         color: #fff;
         border-radius: 2px;
-        text-align: center
+        text-align: center;
+        max-width: 200px;
+        font: 12px sans-serif;
     }
 
 /* Creates a small triangle extender for the tooltip */
@@ -62,7 +59,7 @@
         font-size: 10px;
         width: 100%;
         line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(33, 113, 181, 0.8);
         content: "\25BC";
         position:absolute;
         text-align: center;
@@ -73,5 +70,40 @@
         margin: -1px 0 0 0;
         top: 100%;
         left: 0;
+    }
+    
+    .bar {
+      fill: steelblue;
+    }
+
+    .bar:hover {
+      fill: brown;
+    }
+    
+    .title {
+      font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .axis {
+      font: 10px sans-serif;
+    }
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+    .x.axis path {
+      display: none;
+    }
+
+    .hidden { 
+      display: none; 
+    }
+
+    path {
+      stroke: white;
+      stroke-width: 0.25px;
+      fill: grey;
     }
     

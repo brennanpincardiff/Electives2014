@@ -6,21 +6,21 @@ paul.renderGraph=function(strategy)
     var valueMethod=strategy.number;
     var tooltipMethod=strategy.tooltip;
     var nameMethod=strategy.name;
-
+    var place = strategy.place;
     
     // Script for drawing the low point histogram again. 
-    var margin = {top: 10, right: 0, bottom: 150, left: 120},
+    var margin = {top: 30, right: 0, bottom: 150, left: 80},
         width = $(".graph")[0].offsetWidth - margin.left - margin.right;
     
     if (width > 500){ 
-        height = 500 - margin.top - margin.bottom;
-        }
-    else if (width < 300){
-        height = 300 - margin.top - margin.bottom;
-        }
-    else {
-        height = width - margin.top - margin.bottom;
-        };
+            height = 500 - margin.top - margin.bottom;
+            }
+        else if (width < 300){
+            height = 300 - margin.top - margin.bottom;
+            }
+        else {
+            height = width - margin.top - margin.bottom;
+            };
     
     var x = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
@@ -35,13 +35,13 @@ paul.renderGraph=function(strategy)
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(10);
+        .ticks(20);
     
-    var div = d3.select("body").append("div")   
+    var div = d3.select(place).append("div")   
         .attr("class", "tooltip")               
         .style("opacity", 0);
     
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select(place).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -52,15 +52,14 @@ paul.renderGraph=function(strategy)
         .offset([-10, 0])
         .html(function(d) {return tooltipMethod(d);});
     
-    d3.csv("https://dl.dropboxusercontent.com/u/7729166/dataquotes20140814.csv", type, function(error, data) {
+    d3.csv("https://dl.dropboxusercontent.com/u/7729166/dataquotes20140819.csv", type, function(error, data) {
       x.domain(data.map(nameMethod));
-      y.domain([0, d3.max(data, function(d) { return valueMethod(d)+2; })]);
-    
+      y.domain([0, d3.max(data, function(d) { return valueMethod(d);})]);
     
       svg.append("text")
           .attr("class", "title")
-          .attr("x", function(d) {return width/3;})
-          .attr("y", 10)
+          .attr("x", function(d) {return width/8;})
+          .attr("y", -10)
           .text(title);
     
       if (width > 500){   
@@ -138,8 +137,10 @@ paul.renderGraph=function(strategy)
     
     
     
-    function type(d) {
+   function type(d) {
       d.low_numbers = +d.low_numbers;
-      return d;
+      d.advice_numbers = +d.advice_numbers;
+      d.safe_numbers = +d.safe_numbers;
+            return d;
     }
 };
