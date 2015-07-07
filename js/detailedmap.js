@@ -32,7 +32,7 @@ function setup(width,height){
 				  g = svg.append("g:g");
 				}
 
-d3.json("./data/world-topo-min.json", function(error, world) {
+d3.json("https://dl.dropboxusercontent.com/u/7729166/data/world-topo-min.json", function(error, world) {
 				  var countries = topojson.feature(world, world.objects.countries).features;
 				  topo = countries;
 				  draw(topo);
@@ -62,7 +62,7 @@ svg.append("path")
 				function drawsummarycircles(){
 
 // load and display the places of the electives
-d3.tsv("./data/electives7.tsv", function(error, data) {
+d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electives7.tsv", function(error, data) {
     g.selectAll("circle")
        .data(data)
        .enter()
