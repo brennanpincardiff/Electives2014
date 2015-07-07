@@ -9,13 +9,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Cardiff SoM Electives 2014</title>
+    <title>Cardiff SoM Electives 2015</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/electives.css" rel="stylesheet">
 
 	<!-- load up the scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -23,33 +24,12 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-<style>
-
-	.text{
-	  font-size:10px;
-	  text-transform:capitalize;
-	}
-
-
-	.hidden { 
-	  display: none; 
-	}
-
-	
-	img {
-		 max-width:100%;
-		 height: auto;
-	}
-	
-</style>
-
-
 
   </head>
 
   <body>
 
-   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
       <a class="navbar-brand" href="index.html">Cardiff University Elective Survey</a>
         <div class="navbar-header">
@@ -75,30 +55,27 @@
       </div>
     </div>
 
+
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
     	<div class="container">
-        	<h2>About the survey and these pages</h2>
-        	<p> We would like to thank all the students who agreed to allow their information to be shared.</p>
-        	<p> These pages were prepared by:	</p>
-        	<ul>   	
-        		<li> <a href = "http://medicine.cf.ac.uk/person/paul-brennan/">Dr Paul Brennan </a> works in the Institute of Cancer & Genetics, School of Medicine, Cardiff University.
-        		<li> <a href = "http://medicine.cf.ac.uk/person/dr-samantha-jayne-hibbitts/">Dr Sam Hibbitts </a> is the <a href = "http://blogs.cardiff.ac.uk/ssccardiff/">SSC Director in MB BCh at Cardiff University</a>.
-        	</ul>   
-        	
-        	<p> These pages were prepared using:
-        	<ul>
-        		<li> <a href = "http://d3js.org">D3.js </a> - an open source javascript library for data visualisation.
-        		<li> Code and advice from <a href = "http://bost.ocks.org/mike/">Mike Bostock</a>, <a href = "http://techslides.com/responsive-d3-map-with-zoom-and-pan-limits/">techslides.com</a>, <a href = "http://www.d3noob.org/">D3.js Tips and Tricks</a> and others not mentioned.
-        		<li> <a href = "http://getbootstrap.com/">Bootstrap </a> - a HTML, CSS, and JS framework. 
-        		<li> The topic clouds were prepared using <a href = "http://textisbeautiful.net/">Text is Beautiful</a>.
-        		<li> Getting d3 tool tips to work within Bootstrap required the use of <a href = "http://labratrevenge.com/d3-tip/">d3.tip</a> by <a href = "https://github.com/Caged">Justin Palmer</a> - thanks Justin.  
-        	</ul>
+        	<h2>Cardiff University Students Elective Destinations 2015</h2>
+        	<p>
+        	Following a survey of Cardiff University School of Medicine Students, 
+        	a map showing selected elective destinations was generated. 
+        	</p>
+        <div id="frontpagemap">
+        	   <!-- javascript for drawing a map -->
+			<script src=js/detailedmap2015.js>
+				</script>
+        	</div>
+ 	  <p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage.html">2014 detailed map &raquo;</a></p>
+
       </div>
       
     </div>
-    
-     
+        
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
@@ -125,7 +102,7 @@
           <h2>Advice from Students</h2>
           <p>
           <img src="pictures/advicehigh.png"  class="img-responsive" alt="Responsive image">
-          Planning seems the key.
+          Planning seems to be the key.
           </p>
           <p><a class="btn btn-default" href="advice.html" role="button">View details &raquo;</a></p>
         </div>

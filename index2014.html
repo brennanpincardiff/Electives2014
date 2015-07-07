@@ -17,21 +17,20 @@
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
     <link href="css/electives.css" rel="stylesheet">
-
+    
 	<!-- load up the scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+</head>
 
-  </head>
-
-  <body>
+<body>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-      <a class="navbar-brand" href="index.html">Cardiff University Elective Survey</a>
+      <a class="navbar-brand" href="frontpage.html">Cardiff University Elective Survey 2014</a>
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -53,24 +52,21 @@
       </div>
     </div>
 
-
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
     	<div class="container">
-        	<h2>Cardiff University Students Elective Destinations 2014</h2>
-        	<p>
-        	Following a survey of Cardiff University School of Medicine Students, 
-        	a map showing selected elective destinations was generated. 
-        	</p>
-        <div id="frontpagemap">
+		<h2>Cardiff University Students Elective Destinations</h2>
+		<p>
+		School of Medicine Fifth year students were surveyed about their Electives. 75 students responded.</p> 
+		</p>
+		<div id="frontpagemap">
         	   <!-- javascript for drawing a map -->
-			<script src=js/detailedmap.js>
+		    <script src=js/frontmap.js>
 				</script>
-        	</div>
-      </div>
-      <p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage2015.html">2015 detailed map &raquo;</a></p>
-  
+		</div>
+    	<p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage.html">More detailed map &raquo;</a></p>
+	</div>
+      
     </div>
         
     <div class="container">
@@ -112,5 +108,6 @@
         <p><a href="about.html">Prepared by Dr Paul Brennan & Dr Sam Hibbitts, August 2014</a></p>
       </footer>
     </div> <!-- /container -->
+
   </body>
 </html>
