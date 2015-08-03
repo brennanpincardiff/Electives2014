@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Cardiff SoM Electives 2014</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/electives.css" rel="stylesheet">
+    
+	<!-- load up the scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+      <a class="navbar-brand" href="frontpage.html">Cardiff University Elective Survey 2014</a>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <div class = "collapse navbar-collapse navbar-collapse">         
+          	<ul class = "nav navbar-nav navbar-right">
+          		<li><a href = "detailedmappage.html">Detailed Map</a></li>
+          		<li><a href = "highlights.html">Highlights</a></li>
+          		<li><a href = "lowpoints.html">Low Points</a></li>
+          		<li><a href = "advice.html">Advice</a></li>
+          	    <li><a href = "about.html">About</a></li>   		
+          	</ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+    	<div class="container">
+		<h2>Cardiff University Students Elective Destinations</h2>
+		<p>
+		School of Medicine Fifth year students were surveyed about their Electives. 75 students responded.</p> 
+		</p>
+		<div id="frontpagemap">
+        	   <!-- javascript for drawing a map -->
+		    <script src=js/frontmap.js>
+				</script>
+		</div>
+    	<p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage.html">More detailed map &raquo;</a></p>
+	</div>
+      
+    </div>
+        
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+
+        <div class="col-md-4">      
+         <h2>Student Highlights</h2>
+          <p>
+          	<img src="pictures/highlights.png" class="img-responsive" alt="Responsive image">
+          	People and patients were highlights of the Electives. 
+          </p>
+          <p><a class="btn btn-default" href="highlights.html" role="button">View details &raquo;</a></p>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Student Low Points</h2>
+          <p>
+          <img src="pictures/lowpoints.png"  class="img-responsive" alt="Responsive image">
+          Many students had no 'low points' but there are some challenges. 
+          </p>
+          <p><a class="btn btn-default" href="lowpoints.html" role="button">View details &raquo;</a></p>
+       </div>
+
+        <div class="col-md-4">
+          <h2>Advice from Students</h2>
+          <p>
+          <img src="pictures/advice.png"  class="img-responsive" alt="Responsive image">
+          Planning seems to be the key.
+          </p>
+          <p><a class="btn btn-default" href="advice.html" role="button">View details &raquo;</a></p>
+        </div>
+ 
+      </div>
+
+      <hr>
+
+      <footer>
+        <p><a href="about.html">Prepared by Dr Paul Brennan & Dr Sam Hibbitts, August 2014</a></p>
+      </footer>
+    </div> <!-- /container -->
+
+  </body>
+</html>

@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Cardiff SoM Electives 2014 Detailed Map</title>
+    <title>Cardiff SoM Electives 2015</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,17 +21,9 @@
 	<!-- load up the scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/topojson.v1.min.js"></script>
-    <script src="js/d3.tip.v0.6.3.js"></script>
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->    
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
   </head>
 
@@ -68,34 +60,20 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
     	<div class="container">
-        	<h2>Cardiff University Students Elective Destinations 2014</h2>
+        	<h2>Cardiff University Students Elective Destinations 2015</h2>
         	<p>
         	Following a survey of Cardiff University School of Medicine Students, 
-        	a map showing the elective destinations was generated. 
+        	a map showing selected elective destinations was generated. 
         	</p>
-
-        <noscript>
-           <img src="pictures/detailmapscreenshot.png"  class="img-responsive" alt="Responsive image"height="500" width="750" align="centre">
-           <b>This map will be interactive with javascript enabled.</b>
-           <style type="text/css"></style>
-        </noscript> 
-
-        <!--[if lte IE 8]>
-           <img src="pictures/detailmapscreenshot.png"  class="img-responsive" alt="Responsive image"height="500" width="750" align="centre">
-           <b>This map will be interactive on a more up-to-date browser.</b>
-           <style type="text/css"></style>
- 
-        <![endif]-->
-      
-        
         <div id="frontpagemap">
         	   <!-- javascript for drawing a map -->
-			<script src=js/detailedmap.js>
+			<script src=js/detailedmap2015.js>
 				</script>
         	</div>
+ 	  <p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage.html">2014 detailed map &raquo;</a></p>
+
       </div>
-      <p><a class="btn btn-primary btn-lg" role="button" href= "detailedmappage2015.html">2015 detailed map &raquo;</a></p>
-  
+      
     </div>
         
     <div class="container">
@@ -103,62 +81,35 @@
       <div class="row">
 
         <div class="col-md-4">      
-         <h2><a href="highlights.html">Student Highlights</a></h2>
+         <h2>Student Highlights</h2>
           <p>
-            <img src="pictures/highlightshigh.png" class="img-responsive" alt="Responsive image">
-            People and patients were highlights of the Electives. 
+          	<img src="pictures/highlightshigh.png" class="img-responsive" alt="Responsive image">
+          	People and patients were highlights of the Electives. 
           </p>
+          <p><a class="btn btn-default" href="highlights.html" role="button">View details &raquo;</a></p>
         </div>
 
         <div class="col-md-4">
-          <h2><a href="lowpoints.html">Student Low Points</a></h2>
+          <h2>Student Low Points</h2>
           <p>
-          <img src="pictures/Lowhigh.png"  class="img-responsive" alt="Responsive image">
+          <img src="pictures/lowhigh.png"  class="img-responsive" alt="Responsive image">
           Many students had no 'low points' but there are some challenges. 
           </p>
+          <p><a class="btn btn-default" href="lowpoints.html" role="button">View details &raquo;</a></p>
        </div>
 
         <div class="col-md-4">
-          <h2><a href="advice.html">Student Advice</a></h2>
+          <h2>Advice from Students</h2>
           <p>
           <img src="pictures/advicehigh.png"  class="img-responsive" alt="Responsive image">
           Planning seems to be the key.
           </p>
+          <p><a class="btn btn-default" href="advice.html" role="button">View details &raquo;</a></p>
         </div>
  
       </div>
-    <div class="container">
 
-      <div class="row">
- 
-        <div class="col-md-2">
-          <p><a class="btn btn-default" href="highlights.html" role="button">Highlights &raquo;</a></p>
-       </div>
-
-        <div class="col-md-2">
-          <p><a class="btn btn-default" href="lowpoints.html" role="button">Low Points &raquo;</a></p>
-        </div>
-
-        <div class="col-md-2">      
-          <p><a class="btn btn-default" href="advice.html" role="button">Advice &raquo;</a></p>
-        </div>
-
-        <div class="col-md-2">
-          <p><a class="btn btn-default" href="stories.html" role="button">Stories &raquo;</a></p>
-       </div>
-
-        <div class="col-md-2">
-          <p><a class="btn btn-default" href="futureops.html" role="button">Future Ops &raquo;</a></p>
-        </div>
-
-        <div class="col-md-2">
-          <p><a class="btn btn-default" href="about.html" role="button">About &raquo;</a></p>
-        </div>
-        
-      </div>
-
-
-
+      <hr>
 
       <footer>
         <p><a href="about.html">Prepared by Dr Paul Brennan & Dr Sam Hibbitts, August 2014</a></p>

@@ -12,10 +12,13 @@ var graticule = d3.geo.graticule();
 
 var tip = d3.tip()
 	.attr('class', 'd3-tip')
- 	.offset([-10, 0])
+ 	.offset([0, 0])
 	.html(function(d) {
-			return d.speciality + "<br/> in <br/>"  + d.host + "<br/> <b>Experience </b>" + d.rateexperience;
-  });
+					  	if (d.number == 1) {
+ 					 		return "One sudent visited <br/>" + d.region;}
+						    else {
+					    	return d.number + " students visited <br/>"  + d.region;}
+  				})
 
 setup(width,height);
 
@@ -28,6 +31,7 @@ function setup(width,height){
 			      .attr("width", width)
 			      .attr("height", height)
 			      .call(zoom)
+			      .on("click", click)
 			      .append("g");
 				  g = svg.append("g:g");
 				}
@@ -39,10 +43,10 @@ d3.json("https://dl.dropboxusercontent.com/u/7729166/data/world-topo-min.json", 
 				});
 
 function draw(topo) {
-svg.append("path")
-   .datum(graticule)
-   .attr("class", "graticule")
-   .attr("d", path);
+                svg.append("path")
+                    .datum(graticule)
+                    .attr("class", "graticule")
+                    .attr("d", path);
 
 				g.append("path")
 			   		.datum({type: "LineString", coordinates: [[-180, 0], [-90, 0], [0, 0], [90, 0], [180, 0]]})
@@ -61,28 +65,29 @@ svg.append("path")
 
 				function drawsummarycircles(){
 
-// load and display the places of the electives
-d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electives7.tsv", function(error, data) {
+  //Adding elective summary circles from external TSV file
+  
+  
+    	
+  d3.tsv("https://dl.dropboxusercontent.com/u/7729166/electivestotal2015.txt", function(err, data) {
     g.selectAll("circle")
        .data(data)
        .enter()
-       .append("circle")
+       .append("svg:circle")
        .attr("cx", function(d) {
                return projection([d.longitude, d.latitude])[0];
        })
        .attr("cy", function(d) {
                return projection([d.longitude, d.latitude])[1];
        })
-       .attr("r", width/350)
-       .attr("stroke-width", 0.5)
+       .attr("r",  function(d){
+       			return ([d.radius]*width/150)})
+       .attr("stroke-width", 1)
        .attr("stroke", "black")
        .style("fill", function(d) {
-       					if (d.rateexperience == "Excellent") {return "deeppink";}
-       					else if (d.rateexperience == "Very good") {return "hotpink";}
-       					else {return "pink";}
-       					;})
-	   .on('mouseover', tip.show)
-       .on('mouseout', tip.hide);
+       					return ([d.color])})      
+       .on('mouseover', tip.show)
+       .on('mouseout', tip.hide)
 
     });
     };
@@ -132,3 +137,9 @@ function throttle() {
     }, 200);
 }
 
+//geo translation on mouse click in map
+
+function click() {
+  var latlon = projection.invert(d3.mouse(this));
+  console.log(latlon);
+}
